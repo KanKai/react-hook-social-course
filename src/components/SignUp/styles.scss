@@ -1,0 +1,21 @@
+$defaultMarginRow: 20px;
+
+.signInContainer {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #d9d9d9;
+    div {
+        &.ant-row {
+            margin-bottom: $defaultMarginRow;
+            .col {
+                padding-right: 5px;
+            }
+            .col:last-child {
+                padding-right: 0px;
+            }
+        }
+        &.ant-row:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}
