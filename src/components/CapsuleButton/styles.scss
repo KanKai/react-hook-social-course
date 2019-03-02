@@ -1,0 +1,46 @@
+.capsuleWrapper {
+    display: flex;
+    padding: 10px;
+    background-color: #f5f6f7;
+    border-radius: 18px;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0 15px 0 35px;
+    margin-left: 5px;
+    margin-top: 5px;
+    &:hover {
+        filter: brightness(0.95);
+    }
+    &:active {
+        filter: brightness(0.8);
+    }
+    .icon {
+        margin-right: 10px;
+        font-size: 1.2em;
+        height: 20px;
+        left: 9px;
+        position: absolute;
+        top: 6px;
+        width: 20px;
+    }
+    .label {
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+        white-space: nowrap;
+        color: #4b4f56;
+        font-weight: 600;
+        width: 100%;
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        height: 32px;
+        line-height: 32px;
+    }
+}

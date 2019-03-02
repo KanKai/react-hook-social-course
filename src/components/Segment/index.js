@@ -8,8 +8,8 @@ function renderActions(actions) {
   return (
     <div className="actionsWrapper">
       <div className="container">
-        {actions.map(action => (
-          <SegmentAction>{action}</SegmentAction>
+        {actions.map((action, i) => (
+          <SegmentAction key={btoa(i)}>{action}</SegmentAction>
         ))}
       </div>
     </div>

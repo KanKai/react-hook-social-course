@@ -23,10 +23,16 @@
     }
     .content {
         background-color: #fdfdfd;
+        border-bottom: 1px solid #dddfe2;
     }
     .actionsWrapper {
         background-color: #eeeeee;
-        .actionItem {}
+        .container {
+            flex-direction: column;
+        }
+        .actionItem {
+            padding: 5px 0 5px 0;
+        }
     }
     .container {
         padding: 13px;

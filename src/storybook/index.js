@@ -5,3 +5,6 @@ import "./SignIn";
 import "./SignUp";
 import "./Segment";
 import "./ProfileImage";
+import "./PostSection";
+import "./CapsuleButton";
+import "./Checkbox";

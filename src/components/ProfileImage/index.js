@@ -3,8 +3,8 @@ import "./styles.scss";
 import { Icon } from "antd";
 
 function ProfileImage({ src, icon, size = "x3", ...rest }) {
-  if (!/(^x[1-9])$/.test(size)) {
-    size = "x1";
+  if (!/(^x[1-9]|10)$/.test(size)) {
+    size = "x4";
   }
 
   const [imageLoaded, setImageLoaded] = useState(null);
@@ -23,9 +23,11 @@ function ProfileImage({ src, icon, size = "x3", ...rest }) {
       {imageLoaded ? (
         <img src={imageLoaded} className="image" />
       ) : (
-        <div className="loading">Loading...</div>
+        <div className="loading">
+          <Icon type="minus-circle" />
+        </div>
       )}
-      {!icon && <div className="icon">{icon || <Icon type="plus" />}</div>}
+      {icon && <div className="icon">{icon || <Icon type="plus" />}</div>}
     </div>
   );
 }

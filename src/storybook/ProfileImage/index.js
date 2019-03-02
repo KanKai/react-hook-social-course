@@ -1,9 +1,8 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import ProfileImage from "components/ProfileImage";
-
-storiesOf("ProfileImage", module)
+const src =
+  "https://i0.wp.com/www.wwhf.org/wp-content/uploads/2014/04/bokeh-cover-bg.jpg?ssl=1";
+storiesOf("Profile Image", module)
   .add("with no image", () => <ProfileImage />)
-  .add("with image", () => (
-    <ProfileImage src="https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-png-transparent.png" />
-  ));
+  .add("with image", () => <ProfileImage src={src} />);
