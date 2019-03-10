@@ -1,11 +1,12 @@
 const webpack = require("webpack");
 const { join, resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+require("@babel/polyfill");
 
 module.exports = (env, args) => {
   return {
     mode: "development",
-    entry: "./index.js",
+    entry: ["@babel/polyfill", "./index.js"],
     output: {
       filename: "app.js",
       path: join(__dirname, "../build"),
@@ -52,7 +53,8 @@ module.exports = (env, args) => {
       contentBase: join(__dirname, "../public"),
       hot: true,
       inline: true,
-      port: 3000
+      port: 3000,
+      historyApiFallback: true
     },
     resolve: {
       modules: ["node_modules", resolve(__dirname, "../src")]

@@ -80,7 +80,7 @@ function SignUp() {
           {renderForm(inputFields)}
           <Row>
             <Col>
-              <Button block htmlType="submit">
+              <Button block type="primary" htmlType="submit">
                 SignUp
               </Button>
             </Col>

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Button from "components/Button";
 import Input from "components/Input";
+import { Link } from "react-router-dom";
 import { API } from "../../configs";
 import "./styles.scss";
 import { Row, Col, Icon } from "antd";
 import { UserModel } from "models";
+import history from "routes/history";
 
 const onSignIn = user => async e => {
   e.preventDefault();
@@ -33,6 +35,10 @@ const renderForm = inputFields => {
     </Row>
   ));
 };
+
+function gotoSignUp() {
+  history.push("/sign-up");
+}
 
 function SignIn() {
   const initialUserFormModel = new UserModel();
@@ -75,7 +81,11 @@ function SignIn() {
               </Button>
             </Col>
             <Col span={12} className="col">
-              <Button block>SignUp</Button>
+              {/* <Link to='/sign-up'> */}
+              <Button block onClick={gotoSignUp}>
+                SignUp
+              </Button>
+              {/* </Link> */}
             </Col>
           </Row>
         </form>

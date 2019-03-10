@@ -8,3 +8,5 @@ import "./ProfileImage";
 import "./PostSection";
 import "./CapsuleButton";
 import "./Checkbox";
+import "./TimelineCover";
+import "./TimeHeader";
