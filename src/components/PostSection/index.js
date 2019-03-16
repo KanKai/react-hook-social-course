@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Segment from "components/Segment";
 import ViewFlex from "components/ViewFlex";
 import ProfileImage from "components/ProfileImage";
@@ -7,6 +7,8 @@ import CapsuleButton from "components/CapsuleButton";
 import { Icon, Row, Col, Dropdown, Menu } from "antd";
 import Checkbox from "components/Checkbox";
 import Button from "components/Button";
+import { connect } from "react-redux";
+import MenuItem from "antd/lib/menu/MenuItem";
 
 const src =
   "https://i0.wp.com/www.wwhf.org/wp-content/uploads/2014/04/bokeh-cover-bg.jpg?ssl=1";
@@ -15,28 +17,11 @@ function handlePrivacyClick(e) {
   console.log("click", e);
 }
 
-const privacy = (
-  <Menu onClick={handlePrivacyClick}>
-    <Menu.Item key="public">
-      <Icon type="global" />
-      1st menu item
-    </Menu.Item>
-    <Menu.Item key="onlyMe">
-      <Icon type="lock" />
-      2nd menu item
-    </Menu.Item>
-    <Menu.Item key="friend">
-      <Icon type="team" />
-      3rd item
-    </Menu.Item>
-  </Menu>
-);
-
-function PrivacySelector({ type = privacy }) {
+function PrivacySelector({ privacyMenu }) {
   return (
-    <Dropdown overlay={type} trigger={["click"]}>
+    <Dropdown overlay={privacyMenu} trigger={["click"]}>
       <Button style={{ float: "right" }}>
-        <Icon type="global" /> Button <Icon type="down" />
+        <Icon type="global" /> Privacy <Icon type="down" />
       </Button>
     </Dropdown>
   );
@@ -65,26 +50,57 @@ function renderPostOption(option) {
   ));
 }
 
-function FeedAction() {
+const createPrivacyMenu = privacies => {
+  return (
+    <Menu onClick={() => {}}>
+      {privacies.map(privacy => (
+        <MenuItem key={privacy.name}>
+          <Icon type={privacy.icon} />
+          {privacy.name}
+        </MenuItem>
+      ))}
+    </Menu>
+  );
+};
+
+function FeedAction({ privacies }) {
+  const [privacyMenu, setPrivacyMenu] = useState(null);
+
+  useEffect(() => {
+    if (privacies.length > 0) {
+      const privaciesComponent = createPrivacyMenu(privacies);
+      setPrivacyMenu(privaciesComponent);
+    }
+  }, [privacies]);
+
   return (
     <>
       <Row>
-        <Col span="12">
+        <Col span={12}>
           <Checkbox label="ฟีดข่าว" icon={<Icon type="read" />} />
         </Col>
-        <Col span="12">
-          <PrivacySelector />
+        <Col span={12}>
+          <PrivacySelector privacyMenu={privacyMenu} />
         </Col>
       </Row>
     </>
   );
 }
 
-function StoriesAction() {
+function StoriesAction({ privacies }) {
+  const [privacyMenu, setPrivacyMenu] = useState(null);
+
+  useEffect(() => {
+    if (privacies.length > 0) {
+      const privaciesComponent = createPrivacyMenu(privacies);
+      setPrivacyMenu(privaciesComponent);
+    }
+  }, [privacies]);
+
   return (
     <>
       <Row>
-        <Col span="12">
+        <Col span={12}>
           <Checkbox
             label="เรื่องราวของฉัน"
             icon={
@@ -92,8 +108,8 @@ function StoriesAction() {
             }
           />
         </Col>
-        <Col span="12">
-          <PrivacySelector />
+        <Col span={12}>
+          <PrivacySelector privacyMenu={privacyMenu} />
         </Col>
       </Row>
     </>
@@ -121,11 +137,15 @@ function ShareAction() {
   );
 }
 
-function PostSection() {
+function PostSection({ post }) {
   return (
     <Segment
       title="โพสต์"
-      actions={[<FeedAction />, <StoriesAction />, <ShareAction />]}
+      actions={[
+        <FeedAction privacies={post.privacies} />,
+        <StoriesAction privacies={post.privacies} />,
+        <ShareAction />
+      ]}
     >
       <ViewFlex column>
         <ViewFlex className="postSection">
@@ -145,4 +165,6 @@ function PostSection() {
   );
 }
 
-export default PostSection;
+const mapStateToProps = ({ post }) => ({ post });
+
+export default connect(mapStateToProps)(PostSection);

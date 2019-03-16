@@ -13,9 +13,12 @@
     "antd": "^3.13.5",
     "classnames": "^2.2.6",
     "history": "^4.7.2",
+    "moment": "^2.24.0",
     "react": "16.8.2",
     "react-dom": "16.8.2",
-    "react-router-dom": "^4.3.1"
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.3.3",
@@ -30,6 +33,8 @@
     "html-webpack-plugin": "^3.2.0",
     "json-server": "^0.14.2",
     "node-sass": "^4.11.0",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "4.29.4",

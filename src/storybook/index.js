@@ -10,3 +10,4 @@ import "./CapsuleButton";
 import "./Checkbox";
 import "./TimelineCover";
 import "./TimeHeader";
+import "./Post";

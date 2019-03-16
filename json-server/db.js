@@ -5,7 +5,29 @@ module.exports = () => {
     password: "1234"
   }));
 
+  const privacies = [
+    {
+      id: 1,
+      name: "สาธารณะ",
+      icon: "global",
+      type: 1
+    },
+    {
+      id: 2,
+      name: "เพื่อน",
+      icon: "user",
+      type: 2
+    },
+    {
+      id: 3,
+      name: "เฉพาะฉัน",
+      icon: "lock",
+      type: 3
+    }
+  ];
+
   return {
-    users: db
+    users: db,
+    privacies
   };
 };

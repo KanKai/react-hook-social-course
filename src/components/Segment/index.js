@@ -19,7 +19,7 @@ function renderActions(actions) {
 function Segment({ children, content, title, actions = [] }) {
   return (
     <div className="segment">
-      <SegmentTitle onClick={onClose}>{title}</SegmentTitle>
+      {title && <SegmentTitle onClick={onClose}>{title}</SegmentTitle>}
       <SegmentContent>{children || content}</SegmentContent>
       {actions.length > 0 && renderActions(actions)}
     </div>

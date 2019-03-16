@@ -799,6 +799,12 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@babel/runtime@^7.3.1":
+  version "7.3.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.4.tgz#73d12ba819e365fcf7fd152aed56d6df97d21c83"
+  dependencies:
+    regenerator-runtime "^0.12.0"
+
 "@babel/template@^7.1.0", "@babel/template@^7.1.2", "@babel/template@^7.2.2":
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.2.2.tgz#005b3fdf0ed96e88041330379e0da9a708eb2907"
@@ -3004,6 +3010,10 @@ decamelize@^2.0.0:
 decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
+
+deep-diff@^0.3.5:
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/deep-diff/-/deep-diff-0.3.8.tgz#c01de63efb0eec9798801d40c7e0dae25b582c84"
 
 deep-equal@^1.0.1:
   version "1.0.1"
@@ -6228,7 +6238,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.x, prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@15.x, prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:
@@ -6828,6 +6838,10 @@ react-is@^16.8.1:
   version "16.8.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.2.tgz#09891d324cad1cb0c1f2d91f70a71a4bee34df0f"
 
+react-is@^16.8.2:
+  version "16.8.4"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
+
 react-lazy-load@^3.0.13:
   version "3.0.13"
   resolved "https://registry.yarnpkg.com/react-lazy-load/-/react-lazy-load-3.0.13.tgz#3b0a92d336d43d3f0d73cbe6f35b17050b08b824"
@@ -6849,6 +6863,17 @@ react-modal@^3.6.1:
     prop-types "^15.5.10"
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
+
+react-redux@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-6.0.1.tgz#0d423e2c1cb10ada87293d47e7de7c329623ba4d"
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    hoist-non-react-statics "^3.3.0"
+    invariant "^2.2.4"
+    loose-envify "^1.4.0"
+    prop-types "^15.7.2"
+    react-is "^16.8.2"
 
 react-router-dom@^4.3.1:
   version "4.3.1"
@@ -7025,6 +7050,16 @@ redent@^1.0.0:
   dependencies:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
+
+redux-devtools-extension@^2.13.8:
+  version "2.13.8"
+  resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.8.tgz#37b982688626e5e4993ff87220c9bbb7cd2d96e1"
+
+redux-logger@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
+  dependencies:
+    deep-diff "^0.3.5"
 
 redux@^4.0.1:
   version "4.0.1"
