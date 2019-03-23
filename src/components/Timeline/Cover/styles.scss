@@ -2,9 +2,50 @@
     width: 100%;
     height: 400px;
     overflow: hidden;
+    position: relative;
+
     img {
         width: 100%;
-        height: 100;
+        height: 100%;
         object-fit: cover;
+    }
+
+    img.bluring {
+        filter: blur(0px);
+        transition: all 0.2s ease-in-out;
+    }
+
+    &:hover img.bluring {
+        filter: blur(30px);
+    }
+
+    .coverAction {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 0.2s ease-in-out;
+        z-index: 1;
+        .actionButton {
+            button {
+                border: none;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                margin: 5px;
+                font-size: 2em;
+                user-select: none;
+                &:active {
+                    border: none !important;
+                }
+            }
+        }
+    }
+
+
+    &:hover .coverAction {
+        opacity: 1;
+        transform: translate(0%)
     }
 }

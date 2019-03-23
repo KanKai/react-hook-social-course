@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import AuthRoute from "routes/AuthenRoute";
-import NonAuthRoute from "routes";
+import CustomRoute from "routes/CustomRoute";
 import { Provider, connect } from "react-redux";
 import { Router, Switch } from "react-router-dom";
 import history from "routes/history";
@@ -24,8 +23,7 @@ function Root(props) {
     <>
       <Router history={history}>
         <Switch>
-          <AuthRoute />
-          <NonAuthRoute />
+          <CustomRoute />
         </Switch>
       </Router>
     </>

@@ -4,7 +4,7 @@ import "./styles.scss";
 
 function LoginContainer() {
   return (
-    <div className="signInContainer">
+    <div className="loginContainer">
       <SignIn />
     </div>
   );
